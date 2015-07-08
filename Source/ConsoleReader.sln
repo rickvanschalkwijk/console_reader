@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Reader.Business", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Reader.Business.UnitTests", "Console.Reader.Business.UnitTests\Console.Reader.Business.UnitTests.csproj", "{28422008-A552-4C59-9AB0-49A16DD16E69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Reader.DependencyInjection", "Console.Reader.DependencyInjection\Console.Reader.DependencyInjection.csproj", "{B9975A13-E913-4018-B745-1DD1BC24AB4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{28422008-A552-4C59-9AB0-49A16DD16E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28422008-A552-4C59-9AB0-49A16DD16E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28422008-A552-4C59-9AB0-49A16DD16E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9975A13-E913-4018-B745-1DD1BC24AB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9975A13-E913-4018-B745-1DD1BC24AB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9975A13-E913-4018-B745-1DD1BC24AB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9975A13-E913-4018-B745-1DD1BC24AB4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
