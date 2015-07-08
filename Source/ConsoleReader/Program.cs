@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Console.Reader.DependencyInjection;
+
 namespace ConsoleReader
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            // init structure map
+            IoC.Initialize();
+
         }
     }
 }
