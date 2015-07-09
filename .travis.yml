@@ -4,5 +4,7 @@ install:
   - nuget restore Source/ConsoleReader.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release Source/ConsoleReader.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Source/Console.Reader.DependencyInjection.UnitTests/bin/Release/Console.Reader.DependencyInjection.UnitTests.dll
+  - xbuild /p:Configuration=Debug Source/ConsoleReader.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Source/Console.Reader.DependencyInjection.UnitTests/bin/Debug/Console.Reader.DependencyInjection.UnitTests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Source/Console.Reader.Business.UnitTests/bin/Debug/Console.Reader.Business.UnitTests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Source/Console.Reader.UnitTests/bin/Debug/Console.Reader.UnitTests.dll
