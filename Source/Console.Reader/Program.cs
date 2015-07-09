@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Console.Reader;
 using Console.Reader.DependencyInjection;
 
 namespace ConsoleReader
@@ -13,6 +14,7 @@ namespace ConsoleReader
         {
             // init structure map
             IoC.Initialize();
+            ConsoleHost applicationEntry = new ConsoleHost(System.Console.In, System.Console.Out);
         }
     }
 }
