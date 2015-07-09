@@ -9,11 +9,11 @@ namespace Console.Reader.UnitTests.Extensions
     [TestFixture]
     public class EnsureTests
     {
-        private string _argumentNull = null;
+        private readonly string _argumentNull = null;
 
-        private string _argumentEmpty = string.Empty;
+        private readonly string _argumentEmpty = string.Empty;
 
-        private string _argument = "argument";
+        private const string _argument = "argument";
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]

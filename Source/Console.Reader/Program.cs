@@ -15,6 +15,7 @@ namespace ConsoleReader
             // init structure map
             IoC.Initialize();
             ConsoleHost applicationEntry = new ConsoleHost(System.Console.In, System.Console.Out);
+            applicationEntry.Run();
         }
     }
 }

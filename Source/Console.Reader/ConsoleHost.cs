@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Console.Reader
 {
@@ -9,21 +12,44 @@ namespace Console.Reader
 
         public ConsoleHost(TextReader textReader, TextWriter textWriter)
         {
-            textReader = _textReader;
-            textWriter = _textWriter;
+            _textReader = textReader;
+            _textWriter = textWriter;
         }
         public void Run()
         {
+            InitConsoleWindow();
+            _textWriter.WriteLine("Hello there, welcome to Console Reader........");
+            var fvi = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+            _textWriter.WriteLine(string.Format("You're running v{0}", fvi.FileVersion));
 
+            _textWriter.WriteLine();
+            bool result = true;
+
+            while (result)
+            {
+                string command = Prompt();
+                result = Process(command);
+            }
 
         }
 
         private void InitConsoleWindow()
         {
             System.Console.SetWindowPosition(0, 0);
-            System.Console.Title = "Umbraco Sync Console";
-            System.Console.WindowWidth = 170;
+            System.Console.Title = "Console Reader";
+            System.Console.WindowWidth = 100;
             System.Console.WindowHeight = 75;
+        }
+
+        private string Prompt()
+        {
+            _textWriter.Write("Console Reader> ");
+            return _textReader.ReadLine();
+        }
+
+        private bool Process(string command)
+        {
+            return true;
         }
     }
 }
