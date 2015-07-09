@@ -13,7 +13,6 @@ namespace ConsoleReader
         {
             // init structure map
             IoC.Initialize();
-
         }
     }
 }
