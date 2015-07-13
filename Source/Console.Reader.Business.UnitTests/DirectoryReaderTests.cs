@@ -23,15 +23,15 @@ namespace Console.Reader.Business.UnitTests
         [Test]
         public void ProcessDirectory_ShouldReadAllTheFilesInADirectory_ReturnListOfFilesNotNull()
         {
-            List<string> files = _directoryReader.ProcessDirectory(@"C:\projects\coaching\ConsoleReader\StaticSource");
+            List<string> files = _directoryReader.ProcessDirectory(@"..\..\..\..\StaticSource");
             Assert.That(files, Is.Not.Null);
         }
 
         [Test]
         public void ProcessDirectory_ShouldReadAllTheFIlesInADirectory_ReturnListOfFiles()
         {
-            List<string> files = _directoryReader.ProcessDirectory(@"C:\projects\coaching\ConsoleReader\StaticSource");
-            Assert.That(files, Contains.Item(@"C:\projects\coaching\ConsoleReader\StaticSource\widget.js"));
+            List<string> files = _directoryReader.ProcessDirectory(@"..\..\..\..\StaticSource");
+            Assert.That(files, Contains.Item(@"..\..\..\..\StaticSource\widget.js"));
         }
     }
 }
