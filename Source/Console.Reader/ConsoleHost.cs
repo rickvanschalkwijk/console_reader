@@ -1,19 +1,31 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
+
+using Console.Reader.Business.Interfaces;
+using Console.Reader.Common.Extensions;
+
+using StructureMap;
 
 namespace Console.Reader
 {
     public class ConsoleHost
     {
         private readonly TextReader _textReader;
+
         private readonly TextWriter _textWriter;
+
+        private readonly IDirectoryReader _directoryReader;
 
         public ConsoleHost(TextReader textReader, TextWriter textWriter)
         {
+            Ensure.ArgumentNotNull(textReader, "TextReader");
+            Ensure.ArgumentNotNull(textWriter, "TextReader");
+
             _textReader = textReader;
             _textWriter = textWriter;
+            IContainer container = new Container();
+            _directoryReader = container.GetInstance<IDirectoryReader>();
         }
         public void Run()
         {
@@ -49,6 +61,7 @@ namespace Console.Reader
 
         private bool Process(string command)
         {
+            _directoryReader.ProcessDirectory("../StaticSource/");
             return true;
         }
     }

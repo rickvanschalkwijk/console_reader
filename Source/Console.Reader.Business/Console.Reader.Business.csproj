@@ -39,8 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DirectoryReader.cs" />
+    <Compile Include="Interfaces\IDirectoryReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Console.Reader.Common\Console.Reader.Common.csproj">
+      <Project>{c4a1d8bc-b575-448d-b16c-382cf47603f3}</Project>
+      <Name>Console.Reader.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
