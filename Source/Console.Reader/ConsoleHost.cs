@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
-using Console.Reader.Business.Interfaces;
+using Console.Reader.Business.Readers.Interfaces;
 using Console.Reader.Common.Extensions;
 
 using StructureMap;
@@ -24,8 +25,10 @@ namespace Console.Reader
 
             _textReader = textReader;
             _textWriter = textWriter;
-            IContainer container = new Container();
-            _directoryReader = container.GetInstance<IDirectoryReader>();
+
+            string whatDoIHave = ObjectFactory.Container.WhatDoIHave();
+
+            _directoryReader = ObjectFactory.GetInstance<IDirectoryReader>();
         }
         public void Run()
         {
@@ -42,7 +45,6 @@ namespace Console.Reader
                 string command = Prompt();
                 result = Process(command);
             }
-
         }
 
         private void InitConsoleWindow()
@@ -61,7 +63,8 @@ namespace Console.Reader
 
         private bool Process(string command)
         {
-            _directoryReader.ProcessDirectory("../StaticSource/");
+            List<string> filesPaths = _directoryReader.ProcessDirectory("../../../../StaticSource/");
+            _textWriter.WriteLine("Number of files in the directory: {0}", _directoryReader.CountFilesInDirectory("../../../../StaticSource/"));
             return true;
         }
     }

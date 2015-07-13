@@ -49,9 +49,16 @@
   <ItemGroup>
     <Compile Include="loC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScanningRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Console.Reader.Business\Console.Reader.Business.csproj">
+      <Project>{ab38e751-ecb5-4173-a4c4-bf5138145709}</Project>
+      <Name>Console.Reader.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

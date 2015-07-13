@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-using Console.Reader.Business.Interfaces;
+using Console.Reader.Business.Readers;
+using Console.Reader.Business.Readers.Interfaces;
 
 using NUnit.Framework;
 
-namespace Console.Reader.Business.UnitTests
+namespace Console.Reader.Business.UnitTests.Readers
 {
     [TestFixture]
     public class DirectoryReaderTests

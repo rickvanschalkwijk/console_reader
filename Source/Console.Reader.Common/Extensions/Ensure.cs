@@ -29,7 +29,7 @@ namespace Console.Reader.Common.Extensions
 
         public static void FileExists(string path)
         {
-            if (File.Exists(path))
+            if (System.IO.File.Exists(path))
             {
                 return;
             }
