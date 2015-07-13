@@ -50,6 +50,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Console.Reader.Common\Console.Reader.Common.csproj">
+      <Project>{c4a1d8bc-b575-448d-b16c-382cf47603f3}</Project>
+      <Name>Console.Reader.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Console.Reader\Console.Reader.csproj">
       <Project>{7dc1b6b7-17b1-414d-9be7-834c62333817}</Project>
       <Name>Console.Reader</Name>

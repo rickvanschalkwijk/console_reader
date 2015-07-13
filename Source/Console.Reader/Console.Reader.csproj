@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,15 +50,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleHost.cs" />
-    <Compile Include="Extensions\Ensure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Console.Reader.Business\Console.Reader.Business.csproj">
+      <Project>{ab38e751-ecb5-4173-a4c4-bf5138145709}</Project>
+      <Name>Console.Reader.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Console.Reader.Common\Console.Reader.Common.csproj">
+      <Project>{c4a1d8bc-b575-448d-b16c-382cf47603f3}</Project>
+      <Name>Console.Reader.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Console.Reader.DependencyInjection\Console.Reader.DependencyInjection.csproj">
       <Project>{b9975a13-e913-4018-b745-1dd1bc24ab4f}</Project>
       <Name>Console.Reader.DependencyInjection</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

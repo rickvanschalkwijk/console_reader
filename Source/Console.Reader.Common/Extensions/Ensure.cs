@@ -1,6 +1,7 @@
 ﻿using System;
+using System.IO;
 
-namespace Console.Reader.Extensions
+namespace Console.Reader.Common.Extensions
 {
     public static class Ensure
     {
@@ -16,7 +17,27 @@ namespace Console.Reader.Extensions
             throw new ArgumentException("String cannot be empty", name);
         }
 
-        private static void ArgumentNotNull([ValidatedNotNull]object value, string name)
+        public static void DirectoryExists(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                return;
+            }
+
+            throw new DirectoryNotFoundException("Directory not found");
+        }
+
+        public static void FileExists(string path)
+        {
+            if (System.IO.File.Exists(path))
+            {
+                return;
+            }
+
+            throw new FileNotFoundException("File Not found");
+        }
+
+        public static void ArgumentNotNull([ValidatedNotNull]object value, string name)
         {
             if (value != null)
             {

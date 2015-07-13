@@ -1,19 +1,34 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
+
+using Console.Reader.Business.Readers.Interfaces;
+using Console.Reader.Common.Extensions;
+
+using StructureMap;
 
 namespace Console.Reader
 {
     public class ConsoleHost
     {
         private readonly TextReader _textReader;
+
         private readonly TextWriter _textWriter;
+
+        private readonly IDirectoryReader _directoryReader;
 
         public ConsoleHost(TextReader textReader, TextWriter textWriter)
         {
+            Ensure.ArgumentNotNull(textReader, "TextReader");
+            Ensure.ArgumentNotNull(textWriter, "TextReader");
+
             _textReader = textReader;
             _textWriter = textWriter;
+
+            string whatDoIHave = ObjectFactory.Container.WhatDoIHave();
+
+            _directoryReader = ObjectFactory.GetInstance<IDirectoryReader>();
         }
         public void Run()
         {
@@ -30,7 +45,6 @@ namespace Console.Reader
                 string command = Prompt();
                 result = Process(command);
             }
-
         }
 
         private void InitConsoleWindow()
@@ -49,6 +63,8 @@ namespace Console.Reader
 
         private bool Process(string command)
         {
+            List<string> filesPaths = _directoryReader.ProcessDirectory("../../../../StaticSource/");
+            _textWriter.WriteLine("Number of files in the directory: {0}", _directoryReader.CountFilesInDirectory("../../../../StaticSource/"));
             return true;
         }
     }

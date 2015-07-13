@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Reader.DependencyIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Reader.Business", "Console.Reader.Business\Console.Reader.Business.csproj", "{AB38E751-ECB5-4173-A4C4-BF5138145709}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Reader.Common", "Console.Reader.Common\Console.Reader.Common.csproj", "{C4A1D8BC-B575-448D-B16C-382CF47603F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{AB38E751-ECB5-4173-A4C4-BF5138145709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB38E751-ECB5-4173-A4C4-BF5138145709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB38E751-ECB5-4173-A4C4-BF5138145709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A1D8BC-B575-448D-B16C-382CF47603F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A1D8BC-B575-448D-B16C-382CF47603F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A1D8BC-B575-448D-B16C-382CF47603F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A1D8BC-B575-448D-B16C-382CF47603F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Console.Reader.Business
+namespace Console.Reader.Business.UnitTests.Readers
 {
-    public class Class1
+    class FileReaderTests
     {
     }
 }
